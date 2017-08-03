@@ -66,7 +66,7 @@ var template=`<html>
            ${heding}
         </h3>
         <div>
-            ${date}
+        septembers
         </div>
         <div>
           ${content}
