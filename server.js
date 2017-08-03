@@ -24,16 +24,16 @@ articleone: {
             </p>`
 },
 articletwo: {
-  title: 'Article one | Navas Hashim',
-  heading: 'Article One',
+  title: 'Article two | Navas Hashim',
+  heading: 'Article two',
   date:'Sep 4 2017',
   content:` <p>
             This is the content for my second article.
             </p>`
 },
 articlethree:   {
-  title: 'Article one | Navas Hashim',
-  heading: 'Article One',
+  title: 'Article three | Navas Hashim',
+  heading: 'Article three',
   date:'Sep 4 2017',
   content:` <p>
             This is the content for my third article.
@@ -81,18 +81,11 @@ return template;
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
-app.get('/article-one', function (req, res){
-  res.sendFile(path.join(__dirname, 'ui', 'article-one.html'));
-    
+app.get('/:articlename', function (req, res){
+    var articlename= req.parass.articlename;
+      res.send(createtemplate(articles[articlename]));
 });
-app.get('/article-two', function (req, res){
-  res.send(createtemplate(articleone));
-    
-});
-app.get('/article-three', function (req, res){
-  res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));
-    
-});
+
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
