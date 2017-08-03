@@ -63,7 +63,7 @@ var template=
            dddd
         </h3>
         <div>
-        septembers
+        $[heading]
         </div>
         <div>
           dddd
