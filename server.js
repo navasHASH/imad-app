@@ -7,10 +7,11 @@ app.use(morgan('combined'));
 
 
  var articleone = {
+     
     title : 'article one',
-  heading: 'Article One',
-  date:'Sep 4 2017',
-  content:` <p>
+  heading : 'Article One',
+  date :'Sep 4 2017',
+  content :` <p>
             This is the content for my first article. This is the content for my first article. This is the content for my first article.    This is the content for my first article.    this is the content for my first article.    This is the content for my first article.        
                 
             </p>
@@ -22,6 +23,7 @@ app.use(morgan('combined'));
               This is the content for my first article. This is the content for my first article. This is the content for my first article.    This is the content for my first article.    this is the content for my first article.    This is the content for my first article.        
                   
             </p>`
+              
 };
 
 
@@ -67,7 +69,7 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 app.get('/:article-one', function (req, res){
-      res.send(createtemplate(articles[articleone]));
+      res.send(createTemplate(articles[articleone]));
 });
 
 app.get('/ui/style.css', function (req, res) {
