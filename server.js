@@ -5,8 +5,8 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var articles = {
-articleone: {
+
+ articleone = {
     title : `article one`,
   heading: `Article One`,
   date:`Sep 4 2017`,
@@ -22,33 +22,20 @@ articleone: {
               This is the content for my first article. This is the content for my first article. This is the content for my first article.    This is the content for my first article.    this is the content for my first article.    This is the content for my first article.        
                   
             </p>`
-},
-articletwo: {
-    title :`article two`,
-  heading: `Article two`,
-  date:`Sep 4 2017`,
-  content:` <p>
-            This is the content for my second article.
-            </p>`
-},
-articlethree:   {
-  title: `Article three | Navas Hashim`,
-  heading: `Article three`,
-  date:`Sep 4 2017`,
-  content:` <p>
-            This is the content for my third article.
-            </p>`
-}
 };
 
-function createtemplate(datada)
-{
-    var heading = datada.heading;
-var template=
+
+function creatTemplate(data){
+var title=data.title;
+var heading = data.heading;
+var date = data.date;
+var content = data.content;
+
+var htmltemplate = 
 `<html>
     <head>
         <title>
-          helo
+            ${title}
         </title>
         <meta name="viewport" content="width-device-width, initial-scale-1"/>
       <link href="/ui/style.css" rel="stylesheet"/>
@@ -60,27 +47,27 @@ var template=
             
         </div>
         <h3>
-           dddd
+        ${heading}
         </h3>
         <div>
-        ${heading}
+            ${date}
         </div>
         <div>
-          dddd
+        ${content}
         </div>
         </div>
     </body>
-</html>`
-;
-return template;
+</html>
+`;
+return htmltemplate; 
 }
+
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
-app.get('/:articleName', function (req, res){
-    var articleName= req.params.articleName;
-      res.send(createtemplate(articles[articleName]));
+app.get('/:article-one', function (req, res){
+      res.send(createtemplate(articles[articleone]));
 });
 
 app.get('/ui/style.css', function (req, res) {
