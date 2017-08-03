@@ -43,14 +43,11 @@ articlethree:   {
 
 function createtemplate(data)
 {
-
- var heading = data.heading;
- var content=data.content;
-var title =data.title;
-var template=`<html>
+var template=
+`<html>
     <head>
         <title>
-           ${title}
+          helo
         </title>
         <meta name="viewport" content="width-device-width, initial-scale-1"/>
       <link href="/ui/style.css" rel="stylesheet"/>
@@ -62,13 +59,13 @@ var template=`<html>
             
         </div>
         <h3>
-           ${heding}
+           dddd
         </h3>
         <div>
         septembers
         </div>
         <div>
-          ${content}
+          dddd
         </div>
         </div>
     </body>
