@@ -63,15 +63,15 @@ var template=
            dddd
         </h3>
         <div>
-        $[heading]
+        ${heading}
         </div>
         <div>
           dddd
         </div>
         </div>
     </body>
-</html>
-`;
+</html>`
+;
 return template;
 }
 
