@@ -41,8 +41,9 @@ articlethree:   {
 }
 };
 
-function createtemplate(data)
+function createtemplate(datada)
 {
+    var heading = datada.heading;
 var template=
 `<html>
     <head>
