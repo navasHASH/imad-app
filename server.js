@@ -41,7 +41,7 @@ articlethree:   {
 }
 };
 
-function creattemplate(data)
+function createtemplate(data)
 {
  var title=data.title;
  var date=data.date;
